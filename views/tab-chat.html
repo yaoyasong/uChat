@@ -1,0 +1,37 @@
+<ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+    <button class="button" ng-click="doSomething()">Left Button</button>
+  </div>
+  <h1 class="title">Title!</h1>
+  <div class="buttons">
+    <button class="button">Right Button</button>
+  </div>
+</ion-header-bar>
+<ion-view title="聊天">
+  <ion-content >
+  	<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+  	</ion-refresher>
+  	
+    <ion-item type="item-text-wrap" on-hold="showMenu()" href="#/tab/chat/1">
+		    <h2>聊天1</h2>
+		    <br/>
+		    <p style="font-size:10px;font-color:silver">来自：张三      时间：今天 14：05</p>
+    </ion-item>
+    <ion-item type="item-text-wrap" on-hold="showMenu()" href="#/tab/chat/1">
+        <h2>天天去游泳。。</h2>
+		    <br/>
+		    <p style="font-size:10px;font-color:silver">来自：aaa  时间：203</p>
+    </ion-item>
+    
+    <ion-item ng-repeat="chat in chats" on-drag-right="remove(chat)">
+    	<h2>{{chat.text}}</h2>
+    	<br/>
+		  <p style="font-size:10px;font-color:silver">来自：{{chat.from}}  时间：{{chat.date}}</p>
+    </ion-item>
+    
+    <ion-item type="item-text-wrap" ng-click="doRefresh()">
+        查看更多...
+    </ion-item>
+
+  </ion-content>
+</ion-view>

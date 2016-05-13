@@ -1,0 +1,19 @@
+<ion-view title="朋友">
+  <ion-content padding="false">
+  	<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+  	</ion-refresher>
+    <ion-list>
+    	<ion-item ng-repeat="friend in friends" >
+		  <div class="item-button-right" >
+		  	<div ng-click="go('/tab/friend/{{friend.id}}')">
+		    	{{friend.name}}
+		  	</div>
+		    <button class="button button-calm" ng-click="trigger(friend)">
+		      <i class="icon ion-plus-round" ng-if="!friend.added"></i>
+		      <i class="icon ion-minus-round" ng-if="friend.added"></i>
+		    </button>
+		  </div>
+		</ion-item>
+		</ion-list>
+  </ion-content>
+</ion-view>

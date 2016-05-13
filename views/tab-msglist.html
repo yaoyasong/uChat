@@ -1,0 +1,18 @@
+<ion-view title="随机消息发送列表">
+  <ion-content has-header="true">
+  	<ion-list>
+	  	<ion-item type="item-text-wrap">
+	      <button class="button button-calm" ng-click="showAddMsg()">
+		      <i class="icon ion-plus-round"></i>
+		    </button>
+	    </ion-item>
+	    <ion-item type="item-text-wrap" ng-show="inputShow">
+	    	<input type="text" ng-model="newMsg.text" placeholder="请输入消息内容..."></input>
+	    	<button class="button button-calm" ng-click="save(newMsg)">保存</button>
+	    </ion-item>
+	    <ion-item ng-repeat="message in msglist" type="item-text-wrap" on-drag-right="remove(message)">
+	        {{message.text}}
+	    </ion-item>
+  	</ion-list>
+  </ion-content>
+</ion-view>

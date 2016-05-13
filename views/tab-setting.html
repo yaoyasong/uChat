@@ -1,0 +1,28 @@
+<ion-view title="设置">
+  <ion-content>
+  	<div class="list">
+		  <label class="item item-input">
+		    <span class="input-label">名称</span>
+		    <input type="text" ng-model="account.name">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">邮箱</span>
+		    <input type="text" ng-model="account.email">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">密码</span>
+		    <input type="password" ng-model="account.password">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">生日</span>
+		    <input type="date" ng-model="account.birthday">
+		  </label>
+  		<ion-toggle ng-model="account.useSysMsglist" toggle-class="toggle-calm">使用系统随机消息</ion-toggle>.
+  	</div>
+  	<div>
+  		<button class="button button-calm" ng-click="save()">
+			  保存
+			</button>
+		</div>  	
+  </ion-content>
+</ion-view>
